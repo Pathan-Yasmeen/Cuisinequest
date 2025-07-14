@@ -1,0 +1,23 @@
+.recipe-share-container {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.recipe-share-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #4CAF50;
+}
+
+.recipe-share-container .form-group textarea {
+    resize: vertical; /* Allow vertical resizing of textareas */
+}
+
+.recipe-share-container button[type="submit"] {
+    width: 100%;
+    margin-top: 20px;
+}

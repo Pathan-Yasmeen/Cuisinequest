@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CuisineQuest - Discover & Share World Recipes</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>CuisineQuest</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="recipe-sharing.html">Share Recipe</a></li>
+                <li><a href="search.html">Search Recipes</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h2>Welcome to CuisineQuest!</h2>
+            <p>Discover and share delicious recipes from around the world.</p>
+            <button onclick="location.href='recipe-sharing.html'">Share Your Recipe</button>
+            <button onclick="location.href='search.html'">Browse Recipes</button>
+        </section>
+
+        <section id="recipe-categories">
+            <h2>Explore Categories</h2>
+            <div class="categories-grid">
+                <div class="category-card" data-category="breakfast">
+                    <img src="assets/images/breakfast.jpg" alt="Breakfast">
+                    <h3>Breakfast</h3>
+                </div>
+                <div class="category-card" data-category="lunch">
+                    <img src="assets/images/lunch.jpg" alt="Lunch">
+                    <h3>Lunch</h3>
+                </div>
+                <div class="category-card" data-category="dinner">
+                    <img src="assets/images/dinner.jpg" alt="Dinner">
+                    <h3>Dinner</h3>
+                </div>
+                <div class="category-card" data-category="snacks">
+                    <img src="assets/images/snacks.jpg" alt="Snacks">
+                    <h3>Snacks</h3>
+                </div>
+                </div>
+        </section>
+
+        <section id="featured-recipes">
+            <h2>Featured Recipes</h2>
+            <div class="recipes-grid">
+                </div>
+        </section>
+    </main>
+
+    
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

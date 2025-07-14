@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Recipes - CuisineQuest</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/search.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>CuisineQuest</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="recipe-sharing.html">Share Recipe</a></li>
+                <li><a href="search.html">Search Recipes</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="search-container">
+        <h2>Search for Recipes</h2>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search by title, ingredient, or category...">
+            <button id="search-button">Search</button>
+        </div>
+
+        <section id="search-results">
+            <h3>Results</h3>
+            <div class="recipes-grid" id="recipes-results-grid">
+                </div>
+            <p id="no-results" style="display: none;">No recipes found for your search.</p>
+        </section>
+    </main>
+
+    
+    <script src="assets/js/search.js"></script>
+</body>
+</html>

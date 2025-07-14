@@ -1,0 +1,37 @@
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 25px;
+    color: #4CAF50;
+}
+
+.login-container .form-group {
+    text-align: left;
+}
+
+.login-container button[type="submit"] {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.register-link {
+    margin-top: 15px;
+    font-size: 0.95rem;
+}
+
+.register-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}

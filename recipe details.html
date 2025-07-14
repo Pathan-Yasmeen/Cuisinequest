@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="recipe-details-title">Recipe Details - CuisineQuest</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/recipe-details.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>CuisineQuest</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="recipe-sharing.html">Share Recipe</a></li>
+                <li><a href="search.html">Search Recipes</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="recipe-details-container">
+        <h2 id="recipe-details-heading"></h2>
+        <div class="recipe-meta">
+            <p><strong>Category:</strong> <span id="recipe-category"></span></p>
+            <p><strong>Prep Time:</strong> <span id="recipe-prep-time"></span></p>
+            <p><strong>Cook Time:</strong> <span id="recipe-cook-time"></span></p>
+            <p><strong>Servings:</strong> <span id="recipe-servings"></span></p>
+        </div>
+        <div class="recipe-image-container">
+            <img id="recipe-image" src="" alt="Recipe Image">
+        </div>
+        <div class="recipe-sections">
+            <section class="ingredients-section">
+                <h3>Ingredients</h3>
+                <ul id="recipe-ingredients">
+                    </ul>
+            </section>
+            <section class="instructions-section">
+                <h3>Instructions</h3>
+                <ol id="recipe-instructions">
+                    </ol>
+            </section>
+        </div>
+        <button onclick="history.back()" class="back-button">Back to Recipes</button>
+    </main>
+
+   
+    <script src="assets/js/recipe-details.js"></script>
+</body>
+</html>
