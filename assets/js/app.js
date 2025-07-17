@@ -1,6 +1,7 @@
 // Simulate database using an array and localStorage
 let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
 let users = JSON.parse(localStorage.getItem('users')) || [];
+console.log("Recipes loaded at start:",recipes);
 
 // Pre-populate some dummy recipes if none exist
 if (recipes.length === 0) {
@@ -134,19 +135,33 @@ function addRecipe(recipe) {
 function getRecipeById(id) {
     return recipes.find(recipe => recipe.id === parseInt(id));
 }
+function addUser(newUser){
+    if(usersfind(u=> u.sername===newUser.username)){
+        console.warn('username already taken.');
+        return null;
+    }
+    const newUserId=users.length>0? Math.max(...users.map(u=>u.id)) +1:1;
+    newUser.id=newUserId;
+    users.push(newuser);
+    saveUsers();
+    console.log('User registered to browser storage:',newUser);
+    return newUser;
+}
 
 // Function to display recipes on the homepage (featured or by category)
-function displayRecipes(containerId, recipeList) {
-    const container = document.getElementById(containerId);
-    if (!container) return; // Exit if container doesn't exist (e.g., on login page)
+function displayRecipes(containerSelector, recipesToDisplay) {
+    const container = document.querySelector(containerSelector);
+    if (!container){
+        console.error("Container not found:",containerSelector);
+    return; } // Exit if container doesn't exist (e.g., on login page)
     container.innerHTML = ''; // Clear previous content
 
-    if (recipeList.length === 0) {
+    if (recipesToDisplay.length === 0) {
         container.innerHTML = '<p style="text-align: center; color: #666;">No recipes to display yet.</p>';
         return;
     }
 
-    recipeList.forEach(recipe => {
+    recipesToDisplay.forEach(recipe => {
         const recipeCard = document.createElement('div');
         recipeCard.classList.add('recipe-card');
         recipeCard.innerHTML = `
@@ -161,13 +176,20 @@ function displayRecipes(containerId, recipeList) {
 
 // --- Home Page Specific Logic ---
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("DOMContent Loaded fired!");
+    const allRecipes=getAllRecipes();
+    console.log("All recipes retrieved:",allRecipes);
+    const featuredRecipes=allRecipes.slice(0,3);
+    console.log("Featured recipes to display:",featuredRecipes);
+    displayRecipes('.recipes-grid',featuredRecipes);
     const heroSection = document.getElementById('hero');
     const categoriesGrid = document.querySelector('.categories-grid');
-    const featuredRecipesGrid = document.querySelector('#featured-recipes .recipes-grid');
-
     if (heroSection) { // Only run if on index.html
         // Display featured recipes (e.g., the first 3)
+        const featuredRecipes=getAllRecipes();
+        console.log("All recipes retrived:",allRecipes);
         displayRecipes('featured-recipes .recipes-grid', recipes.slice(0, 3));
+        console.log("Featured recipes to display:",featuredRecipes);
 
         // Add event listeners for category cards
         if (categoriesGrid) {
